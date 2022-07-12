@@ -99,7 +99,6 @@ async function verify1(url, alt) {
         console.log(error)
     }
 }
-verify1('spyxfamily', 'spyxfamily')
 module.exports = {
     verify1
 }

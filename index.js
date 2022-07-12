@@ -95,4 +95,4 @@ app.get('/search', async (req, res) => {
 })
 app.listen(port, () => {
   console.log(`MarcAni.me running on port ${port}`)
-)
+})

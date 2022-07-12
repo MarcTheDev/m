@@ -5,7 +5,7 @@
 
 <body class="bg-slate-800 font-anime text-white h-96">
 
-    <div class="max-w-7xl mx-auto max-h-96">
+    <div class="max-w-7xl mx-auto">
         <%- include('nav.ejs'); %>
         <p class="pl-4 bg-slate-700 rounded-t-md text-lg"> EP <%= ep %> | Internal Player
             <% if(ep == total) { %>
@@ -18,7 +18,7 @@
             <a class="float-right pr-4" href="https://goload.pro/download?id=<%= video_id %>"><i
                     class="fa-solid fa-download"></i></a>
         </p>
-        <iframe class="w-full aspect-video h-full bg-slate-500" height="619" width="1100"
+        <iframe class="w-full aspect-video sm:h-1/5 lg:h-full bg-slate-500" height="619" width="1100"
             src="/api/<%= video_id %> "></iframe>
         <div class="pl-4 bg-slate-700 rounded-b-md mb-4">
             <p class="text-sm text-slate-300 pb-1 pt-3">GOGO Stream

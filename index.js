@@ -93,11 +93,6 @@ app.get('/search', async (req, res) => {
     id: res_search.id
   })
 })
-
-https.createServer(app).listen(port); {
-  console.log("Marc Ani.me started securely.")
-}
-
-//app.listen(port, () => {
-  //console.log(`MarcAni.me running on port ${port}`)
-//})
+app.listen(port, () => {
+  console.log(`MarcAni.me running on port ${port}`)
+)

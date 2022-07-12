@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('header.ejs') %>
+
+<body class="bg-slate-800 font-anime text-white h-96">
+
+    <div class="max-w-7xl mx-auto">
+        <%- include('nav.ejs'); %>
+        <div class="flex bg-red-900 max-h-36 rounded-md">
+            <img class="w-24 rounded-tl-md rounded-bl-md"
+                src="https://cachecow.eu/i/b8d55cb861453e3dc2a0c9c7faa158a6.jpg">
+            <div class="pl-5 max-h-36">
+                <p class="pb-2 text-2xl pt-1">Rent a Girlfriend Season 2</p>
+                <p class="text-clip overflow-hidden max-h-24">It's rentin' time! Virgin Kazuya back again embarrassing
+                    himself in public,
+                    surrounded by devilish ex-girlfriend Nanami Mami, hyper-aggressive provisional
+                    girlfriend Sarashina Ruka, super shy but diligent hardworking younger rental girlfriend,
+                    Sakurasawa Sumi… and of course he still simping & stalking Chizuru.</p>
+            </div>
+        </div>
+        <div class="pt-10 w-full lg:w-full md:w-1/2 sm:w-1/6 pl-4 grid sm:grid-cols-5 lg:grid-cols-5 gap-4 pr-4 mb-15">
+            <% for(var i=0; i < home_size; i++){%>
+                <div class="">
+                    <a href="/anime/<%= id[i] %> ">
+                    <span class="sm:col-span-2 text-sm absolute float-left rounded-br-md pr-2 pl-2"
+                        style="background-image:linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) )">
+                        ⭐ <%= rating[i] %>     
+                    </span>
+                    <img style="height:340px;  width:236.8px" src="<%= image[i] %>">
+                    <p style="width:236.8px" class="bg-slate-700 text-center"><%= trending[i] %> </p>
+                    <p style="width:236.8px"class="bg-slate-700 text-center w-60"><%= year[i] %> </p>
+                    </a>
+                </div>
+            <% } %> 
+    </div>
+    <script src="/js/nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('header.ejs') %>
+
+<body class="bg-slate-800 font-anime text-white">
+    <div class="h-80 bg-center"
+        style="background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('<%= poster %>'); background-size: cover;">
+        <div class="max-w-7xl mx-auto max-h-96">
+
+            <%- include('nav.ejs'); %>
+            <div class="container">
+                <div class="info bg-slate-700 mt-24 float-left" style="max-width: 200px; ">
+                    <img class="" src="<%= poster %>">
+
+                    <p class="pl-3 text-sm"><%= title_english %><br><%= title_jp %><br>
+                        <hr class="-mb-px" style="border-top: 1px solid rgb(121, 121, 121);">
+                        <p class="text-center">Information</p>
+                        <hr class="-mb-px" style="border-top: 1px solid rgb(121, 121, 121);">
+                        <p class="pl-3 text-sm pt-2 pb-4">
+                            Score: ⭐ <%= score %> <br>
+                            Episodes: <%= episodes %> <br>
+                            Status: <%= status %> <br>
+                            Popularity: <%= popularity %> <br>
+                            Rating: <%= rating %> <br>
+                            Duration: <%= duration %> Minutes<br>
+                        </p>
+                </div>
+                <div class="content pt-44">
+                    <button class="ml-3 mb-4 bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 rounded" onclick="location.href='/play/<%= buttonurl %>/1'">
+                        <i class="fa-solid fa-play"></i> Watch Now
+                    </button>
+                    <p class="pl-52 text-4xl mb-4"><%= title %></p>
+                    <p class="pl-52 text-sm text-slate-500 pb-3">Genres: 
+                        <%= genres.toString().replaceAll(",", ", ") %> 
+                    </p>
+                    <p class="pl-52 text-md"><%= synopsis %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/nav.js"></script>
+</body>

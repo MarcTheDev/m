@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('header.ejs') %>
+
+<body class="bg-slate-800 font-anime text-white h-96">
+
+    <div class="max-w-7xl mx-auto">
+        <%- include('nav.ejs'); %>
+        <h1 class="text-center text-5xl">Results for "<%= query %>"</h1>
+        <div class="pt-10 w-full lg:w-full md:w-1/2 sm:w-1/6 pl-4 grid sm:grid-cols-5 lg:grid-cols-5 gap-4 pr-4 mb-15">
+            <% for(var i=0; i < home_size; i++){%>
+                <div class="">
+                    <a href="/anime/<%= id[i] %> ">
+                    <span class="sm:col-span-2 text-sm absolute float-left rounded-br-md pr-2 pl-2"
+                        style="background-image:linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) )">
+                        ⭐ <%= rating[i] %>     
+                    </span>
+                    <img style="height:340px;  width:236.8px" src="<%= image[i] %>">
+                    <p style="width:236.8px" class="bg-slate-700 text-center"><%= name[i] %> </p>
+                    <p style="width:236.8px"class="bg-slate-700 text-center w-60"><%= year[i] %> </p>
+                    </a>
+                </div>
+            <% } %> 
+    </div>
+    <script src="/js/nav.js"></script>
+</body>
+
+</html>

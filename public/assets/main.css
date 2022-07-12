@@ -1,0 +1,8 @@
+@media screen and (max-width: 425px) {
+    .info {
+    width: 100%;
+    display: flex;
+      justify-content: center;
+    flex-wrap: wrap;
+  }
+}

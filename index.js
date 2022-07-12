@@ -10,7 +10,7 @@ const cors = require('cors')
 const path = require('path')
 const https = require('https')
 const app = express()
-const port = 80
+const port = 8080
 
 app.use(cors())
 

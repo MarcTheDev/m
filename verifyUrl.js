@@ -32,13 +32,16 @@ async function verify1(url, alt) {
             url1 = url1.replaceAll(" ", "-")
             var reg = url1
             var alt_ = alt1
+            var split = alt1.split('x')
+            split = split[0] + "-x-" + split[1] 
             var nodash = url1.replaceAll("-", "")
-            const [main_url, second_url, alt_url, tv_url, dub] = await Promise.all([
+            const [main_url, second_url, alt_url, tv_url, dub, split_url] = await Promise.all([
                 requests.get("https://goload.pro/videos/" + reg + "-episode-1"),
                 requests.get("https://goload.pro/videos/" + nodash + "-episode-1"),
                 requests.get("https://goload.pro/videos/" + alt_ + "-episode-1"),
                 requests.get("https://goload.pro/videos/" + alt_ + "-tv-episode-1"),
-                requests.get("https://goload.pro/videos/" + alt_ + "-dub-episode-1")
+                requests.get("https://goload.pro/videos/" + alt_ + "-dub-episode-1"),
+                requests.get("https://goload.pro/videos/" + split + "-episode-1"),
             ]);
             // First Url
             try {
@@ -80,6 +83,14 @@ async function verify1(url, alt) {
                 console.log(url1)
                 return url1
             }
+            // Split -x- url.
+            try {
+                JSON.parse(split_url)
+            } catch (error) {
+                url1 = split
+                console.log(url1)
+                return url1
+            }
         } catch (error) {
             console.log(error)
         }
@@ -88,6 +99,7 @@ async function verify1(url, alt) {
         console.log(error)
     }
 }
+verify1('spyxfamily', 'spyxfamily')
 module.exports = {
     verify1
 }

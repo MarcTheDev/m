@@ -8,8 +8,9 @@ var search = require('./search')
 const express = require('express')
 const cors = require('cors')
 const path = require('path')
+const https = require('https')
 const app = express()
-const port = 3000
+const port = 80
 
 app.use(cors())
 
@@ -93,6 +94,10 @@ app.get('/search', async (req, res) => {
   })
 })
 
-app.listen(port, () => {
-  console.log(`MarcAni.me running on port ${port}`)
-})
+https.createServer(app).listen(port); {
+  console.log("Marc Ani.me started securely.")
+}
+
+//app.listen(port, () => {
+  //console.log(`MarcAni.me running on port ${port}`)
+//})
